@@ -1,0 +1,67 @@
+# For a full list of active aliases, run `alias`.
+
+alias zshconfig="micro ~/.zshrc"
+alias neofetchconfig="micro ~/.config/neofetch/config.conf"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+# zshrc config
+alias zshrc="${EDITOR} ${$(cd -P $(dirname $0) && cd ..; pwd -P)}"
+alias reload="source ~/.zshrc && echo 'Shell config reloaded from ~/.zshrc'"
+
+# zsh.local config
+#alias localrc="if [[ -a ~/.zsh.local ]]; then ${EDITOR} ~/.zsh.local; fi"
+
+alias hosts="sudo vim /etc/hosts"
+
+alias o="open"
+alias e="$EDITOR"
+alias g="git"
+alias v="vim"
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+
+# Git shizzle
+alias undocommit-s=git reset --soft HEAD~1
+alias undocommit-h=git reset --hard HEAD~1
+
+# Docker shizzle
+alias dkps="docker ps"
+alias dkst="docker stats"
+alias dkpsa="docker ps -a"
+alias dkimgs="docker images"
+alias dkcpup="docker-compose up -d"
+alias dkcpdown="docker-compose down"
+alias dkcpstart="docker-compose start"
+alias dkcpstop="docker-compose stop"
+
+# IP address, dig, DNS
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1"
+
+# View HTTP traffic
+alias sniff="sudo ngrep -W byline -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+# Enhanced WHOIS lookups
+alias whois="whois -h whois-servers.net"
+
+# Update installed Ruby gems, Homebrew, npm, and their installed packages
+alias brew_update="brew -v update; brew upgrade --force-bottle --cleanup; brew cleanup; brew cask cleanup; brew prune; brew doctor; npm-check -g -u"
+alias update_brew_npm_gem='brew_update; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update --no-document'
+
+# Flush DNS cache
+alias flushdns="dscacheutil -flushcache"
+
+# Show/hide hidden files in Finder
+alias showdotfiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hidedotfiles="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
