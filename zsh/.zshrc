@@ -21,3 +21,31 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+
+#-------ALIASES------------#
+
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+alias zshconfig="micro ~/.zshrc"
+alias neofetchconfig="micro ~/.config/neofetch/config.conf"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+
+alias dkps="docker ps"
+alias dkst="docker stats"
+alias dkpsa="docker ps -a"
+alias dkimgs="docker images"
+alias dkcpup="docker-compose up -d"
+alias dkcpdown="docker-compose down"
+alias dkcpstart="docker-compose start"
+alias dkcpstop="docker-compose stop"
+
+alias hostsconfig="micro /etc/hosts"
